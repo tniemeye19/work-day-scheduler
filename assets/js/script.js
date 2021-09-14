@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var getCurrentDate = moment().format('dddd MMM Do YYYY');
+    var getCurrentDate = moment().format('dddd MMM Do, YYYY');
 
     $("#currentDay").text(getCurrentDate);
 
