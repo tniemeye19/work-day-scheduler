@@ -1,18 +1,21 @@
 $(document).ready(function() {
-
+    //Get current date for top of page
     var getCurrentDate = moment().format('dddd MMM Do, YYYY');
-
+    //Add above info as html element to page
     $("#currentDay").text(getCurrentDate);
 
+    //Initialize limit, 17 because 5pm
     var divLimit = 17;
+    //Iterates through, adds unique id to div
     for (var i = 9; i <= divLimit; i++) {
         $(".container").append("<div class='row time-block' id='time" + i + "'></div>");
 
     };
     
+    //Added hour div to row div
     $(".time-block").append("<div class='col-1 hour'></div>");
-
     
+    //Creates the text input for the time div
     for (var i = 9; i <= divLimit; i++) {
         $(".hour").each(function(i) {
             var morning = i + 9 + "AM";
@@ -36,13 +39,14 @@ $(document).ready(function() {
         });
     };
 
-
+    //Creates the other sections needed for the document
     $(".time-block").append("<textarea class='col-10 description'></textarea>");
     $(".time-block").append("<button class='col-1 saveBtn'></button>");
     $(".saveBtn").append("<i class='fas fa-save'></i>");
 
-    
+    //Initialize time
     var getCurrentTime = moment().hour();
+    //Function to change textarea background based on time
     function singleTimeBlock() {
         $(".time-block").each(function() {
             var blockTime = parseInt($(this).attr("id").split("time")[1]);
@@ -62,7 +66,8 @@ $(document).ready(function() {
             };
         });
     };
-
+    
+    //When save button is clicked, items saved to local storage
     $(".saveBtn").on("click", function() {
 
         var userTextInput = $(this).siblings(".description").val();
@@ -72,6 +77,7 @@ $(document).ready(function() {
         localStorage.setItem(timeInput, userTextInput);
     });
 
+    //Allows, on refresh of page, to obtain information from local storage
     $("#time9 .description").val(localStorage.getItem("time9"));
     $("#time10 .description").val(localStorage.getItem("time10"));
     $("#time11 .description").val(localStorage.getItem("time11"));
