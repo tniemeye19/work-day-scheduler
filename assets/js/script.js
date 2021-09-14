@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+    var getCurrentDate = moment().format('dddd MMM Do YYYY');
+
+    $("#currentDay").text(getCurrentDate);
+
     var divLimit = 17;
     for (var i = 9; i <= divLimit; i++) {
         $(".container").append("<div class='row time-block' id='time" + i + "'></div>");
@@ -12,8 +17,10 @@ $(document).ready(function() {
         $(".hour").each(function(i) {
             var morning = i + 9 + "AM";
 
-            if (i <= 3) {
+            if (i <= 2) {
                 $(this).text(morning);
+            } else if (i === 3) {
+                $(this).text("12PM");
             } else if (i === 4) {
                 $(this).text("1PM");
             } else if (i === 5) {
@@ -24,7 +31,7 @@ $(document).ready(function() {
                 $(this).text("4PM");
             } else if (i === 8) {
                 $(this).text("5PM");
-            }
+            };
             
         });
     };
@@ -74,7 +81,6 @@ $(document).ready(function() {
     $("#time15 .description").val(localStorage.getItem("time15"));
     $("#time16 .description").val(localStorage.getItem("time16"));
     $("#time17 .description").val(localStorage.getItem("time17"));
-
 
     singleTimeBlock();
 
