@@ -24,7 +24,7 @@ This is a daily scheduler/planner that allows the use to save important tasks/it
 * THEN the saved events persist
 
 ## Website Screenshot
-![Website Screenshot](https://raw.githubusercontent.com/tniemeye19/work-dsy-scheduler/main/assets/images/workdayscheduler-screenshot.png)
+![Website Screenshot](https://raw.githubusercontent.com/tniemeye19/work-day-scheduler/main/assets/images/workdayscheduler-screenshot.png)
 
 ## Website Link
 Click [here](https://tniemeye19.github.io/work-day-scheduler) to go to the main Work Day Scheduler wepbage.
